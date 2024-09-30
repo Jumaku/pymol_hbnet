@@ -1,4 +1,4 @@
-# hbonds_search_pymol
+# pymol_hbnet
 
 This repository contains a collection of Python functions and tools for analyzing hydrogen bond networks using PyMOL. The core functionality is centered around identifying hydrogen bonds in PDB structures and visualizing them in PyMOL. The analysis includes hydrogen bond search (`hbsearch`), hydrogen bond network generation (`hbnet`) and cluster visualisation (`shownet`).
 
@@ -39,7 +39,7 @@ import pymol_hbnet # do not put the ending ".py" here
 
 In case you want to run the script with pymol outside the root directory you need to move the `pymol_hbnet.py` file to the destination where you need it. 
 
-**Change the following line then in `pymol_hbnet.py` 
+**Change the following line then in `pymol_hbnet.py`**
 
 ```python
 ROOT_PATH = None
@@ -57,13 +57,21 @@ pymol -R
 
 This runs pymol in remote mode with the default port of 9123.  Following lines in the notebook connect with the pymol api:
 
+**CAUTION: Make sure pymol uses the port 9123**
+
 ```python
 import xmlrpc.client as xmlrpclib
 cmd = xmlrpclib.ServerProxy('http://localhost:9123')
 ```
 
-**CAUTION: Make sure pymol uses the port 9123**
+
 ## Available Commands
+---
+
+**CAUTION: The commands may take some time. Do not loose patience. Progress can be monitored in console if pymol was launched accordingly.**
+
+**CAUTION: When using custom paths make sure not to use relative paths and not to use the '~' for the home directory.**
+
 ---
 ### hbsearch
 
@@ -75,7 +83,6 @@ cmd = xmlrpclib.ServerProxy('http://localhost:9123')
 hbsearch(pdb_str, pdb_save_dir=None, hb_file='path/to/hb-define.txt', pse_file='path/to/period-table-info.txt', solvent_key='NONE', connections='0', remove_pdb=0)
 
 ```
-
 
 
 - `pdb_str` (str): PDB file path or PDB ID.
@@ -135,7 +142,7 @@ shownet(sel_str)
 
 - `sel_str` (str): PyMOL selection string (e.g., `/4akr//A/6/OE1`).
 
-
+---
 ## Directory Structure
 
 The expected directory structure for the repository is as follows:
@@ -148,6 +155,7 @@ pymol_hbnet
 ├── period-table-info.txt
 ├── pymol_hbnet.py
 ├── pymol_hbnet.ipynb
+├── requirements.yml
 ├── README.md
 └── [OS-specific directories]
     ├── Darwin/
