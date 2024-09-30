@@ -5,7 +5,7 @@ This repository contains a collection of Python functions and tools for analyzin
 ## Prerequisites
 
 - **Python 3.7+** 
-- **PyMOL**:
+- **PyMOL 2.0+**
 - **Conda**
 
 ## Installation
@@ -64,7 +64,6 @@ import xmlrpc.client as xmlrpclib
 cmd = xmlrpclib.ServerProxy('http://localhost:9123')
 ```
 
-
 ## Available Commands
 ---
 
@@ -83,7 +82,6 @@ cmd = xmlrpclib.ServerProxy('http://localhost:9123')
 hbsearch(pdb_str, pdb_save_dir=None, hb_file='path/to/hb-define.txt', pse_file='path/to/period-table-info.txt', solvent_key='NONE', connections='0', remove_pdb=0)
 
 ```
-
 
 - `pdb_str` (str): PDB file path or PDB ID.
 - `pdb_save_dir` (str, optional): Directory to save the PDB file. Defaults to `pdb_files/` in the script directory.
@@ -114,10 +112,8 @@ hbsearch('4akr',hb_save_dir='/path/you/want')
 hbnet 4akr, clus_size=5
 
 # Within jupyter notebook
-hbnet('4akr', clus_size=5)
+hbnet('4akr_1', clus_size=5)
 ```
-
-
 
 **Parameters**:
 

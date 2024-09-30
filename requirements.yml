@@ -6,4 +6,4 @@ dependencies:
   - jupyterlab
   - pandas
   - python=3.11
-prefix: /home/juk/builds/anaconda3/envs/hbond
+#prefix: /home/juk/builds/anaconda3/envs/hbond
