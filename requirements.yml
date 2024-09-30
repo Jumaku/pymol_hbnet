@@ -1,0 +1,9 @@
+name: hbond
+channels:
+  - defaults
+dependencies:
+  - conda-forge::mesa-libgl-cos7-x86_64
+  - jupyterlab
+  - pandas
+  - python=3.11
+prefix: /home/juk/builds/anaconda3/envs/hbond
